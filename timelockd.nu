@@ -37,7 +37,7 @@ loop {
             # The id might be empty in the extreme edge case where a job will finish and delete its source file after
             # it has been recorded in the $jobs variable.
             if ($id | is-not-empty) {
-                job kill $id
+                job kill $id.0
             }
         }
     }
@@ -45,6 +45,6 @@ loop {
     if (job list | is-empty) {
         exit
     } else {
-        sleep 30sec
+        sleep 1min
     }
 }
