@@ -17,7 +17,7 @@ When you drop a file with the `.timelock` extension into the specified folder, s
 - Drop a `.timelock` file into the folder for the decryption process to begin.
 - Delete a `.timelock` file from the folder to cancel its ongoing decryption.
 - Encrypted files are deleted when their decryption is complete.
-- The daemon scans the folder every 30 seconds, so there might be a little delay after you drop/delete files.
+- The daemon scans the folder every 60 seconds, so there might be a little delay after you drop/delete files.
 - Any other files in the folder are ignored.
 
 ## Installation (on NixOS)
@@ -40,5 +40,5 @@ Disclaimer: For any seasoned NixOS user, all parts of the following might look h
   };
 ```
 3. Install timelock on your system. You should have at least the `dtlp` binary somewhere.
-4. Download the script in this repo. Adjust the two paths in the start to their correct locations in your system.
-5. nixos-rebuild.
+4. Download the script in this repo. Adjust the two paths in the start of the downloaded script to their correct locations in your system.
+5. `nixos-rebuild`.

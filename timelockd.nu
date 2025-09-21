@@ -29,10 +29,14 @@ loop {
             }
         }
     }
+
+	
+	let filenames = $files | each { path parse | get stem }
+    let jobs = job list | get tag
     
     $jobs
     | each {|job|
-        if $job not-in $files {
+        if $job not-in $filenames {
             let id = job list | where tag == $job | get id
             # The id might be empty in the extreme edge case where a job will finish and delete its source file after
             # it has been recorded in the $jobs variable.
